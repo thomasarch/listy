@@ -17,9 +17,18 @@
 @import 'bootstrap';
 
 
+*:focus {
+    outline: none;
+    background-color: #fefefe;
+}
+
 * {
 	margin: 0px;
 	padding: 0px;
+}
+
+input {
+	padding-left: 6px;
 }
 
 .add-box div {
@@ -31,12 +40,24 @@
 	height: 24px;
 }
 
-#plus-button > :first-child {
+.plus-button {
 	width:24px;
 	height: 24px;
 	font-weight: bolder;
 	position:relative;
-	left:-5px;
+	left:-10px;
+	padding: 0px;
+	background-color: #fefffe;
+
+	&:hover, &:focus {
+		background-color: #6a6;
+	}
+}
+
+.qty-box {
+	width: 36px;
+	text-align: center;
+	padding: 0px;
 }
 
 .container {
@@ -47,13 +68,79 @@
 
 .cell-link {
 	padding:8px;
-	width: 100%;
+	width: 450px;
 	height: 100%;
+	&:hover {
+		background-color: #fdfdff;
+	}
 }
 
 .list-table td {
 	padding:0px !important;
 }
+
+.edit-name {
+	color: #eee;
+	position: relative;
+	left: 8px;
+	top: -3px;
+}
+
+.list-name {
+	display: inline;
+
+}
+
+a {
+  color: #333;
+
+  &:visited {
+    color: default;
+  }
+
+  &:hover {
+    color: default;
+    text-decoration: none;
+  }
+}
+
+// gets ride of arrows on number field
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.x-button-container {
+	position: absolute;
+	float: right;
+	height: 18px;
+	width: 28px;
+	background-color: #fff;
+	padding: 8px 0px 8px 0px;
+
+}
+
+.x-button {
+	position: relative;
+	left: -22px;
+	top: 2px;
+	background-color: #eee;
+	width:13px;
+	height:13px;
+	border-radius: 50%;
+	border: 1px #999 solid;
+	text-align: center;
+	line-height: 11px;
+	font-size: 0.75em;
+	color: #999;
+	&:hover{
+		background-color: #faa;
+		color: #444;
+	}
+}
+
 
 
 

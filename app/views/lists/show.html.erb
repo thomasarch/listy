@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h2>
-  
-  <%= @list.name %>
+<h2 class="list-name">  
+  <%= @list.name %> 
 </h2>
+<%= link_to 'edit name', edit_list_path(@list), class: 'edit-name' %>
+
+
 
 <div id="items" class="container">
 	<table class="table">
