@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lists</h1>
+
+<table class="table list-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lists.each do |list| %>
+      <tr>
+        
+        <td><%= link_to list_path(id: list.id) do %>
+          <div class="cell-link">
+            <%= list.name %>  
+          </div>
+        <% end %></td>
+        <td><%= link_to 'Edit', edit_list_path(list) %></td>
+        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to list_path(id: 7) do %>
+  <p>hello</p>
+<% end %>
+
+
+<%= render 'form', list: @list %>
+
+<%# link_to 'New List', new_list_path %>
