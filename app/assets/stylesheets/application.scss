@@ -66,9 +66,10 @@ input {
 	width: 480px;
 }
 
-.cell-link {
+.list-link {
+	float:left;
 	padding:8px;
-	width: 450px;
+	width: 100%;
 	height: 100%;
 	&:hover {
 		background-color: #fdfdff;
@@ -113,32 +114,26 @@ input::-webkit-inner-spin-button {
 }
 
 .x-button-container {
-	position: absolute;
+	position: relative;
 	float: right;
-	height: 18px;
-	width: 28px;
-	background-color: #fff;
-	padding: 8px 0px 8px 0px;
-
 }
 
 .x-button {
-	position: relative;
-	left: -22px;
-	top: 2px;
-	background-color: #eee;
-	width:13px;
-	height:13px;
-	border-radius: 50%;
-	border: 1px #999 solid;
-	text-align: center;
-	line-height: 11px;
-	font-size: 0.75em;
-	color: #999;
+	position: absolute;
+	top: 10px;
+	left:-24px;
+	color: #eee;
 	&:hover{
-		background-color: #faa;
 		color: #444;
 	}
+}
+
+ul {
+	list-style: none;
+}
+
+.list-box {
+	margin: 24px 0px 36px 0px;
 }
 
 

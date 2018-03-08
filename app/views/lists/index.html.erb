@@ -2,29 +2,14 @@
 
 <h1>Lists</h1>
 
-<table class="table list-table">
+<div class="list-box">
+  <ul>
+  <%= render @lists %>
+  </ul>
+</div>
 
-  <tbody>
-    <% @lists.each do |list| %>
-      <tr>
-        
-        <td><%= link_to list_path(id: list.id) do %>
-          <div class="cell-link">
-            <%= list.name %>  
-          </div>
-        <% end %></td>
-        
-        <td>
-          <div class="x-button-container">
-          <%= link_to list, method: :delete do %>
-            <div class="x-button">x
-            </div>
-          <% end %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+
+
+<div>
 <%= render 'form', list: @list %>
+</div>
