@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="add-box">
+  <div class="submit-box">
 
-    <div class="field" id="text-field">
+    <div class="field text-field">
       <%= form.text_field :name, id: :list_name, placeholder: 'New List' %>
     </div>
     <div class="actions">
@@ -22,9 +22,5 @@
 
   </div>
 
-  <%= form.hidden_field :user_id, value: current_user.id %>
-
-  
-
-  
+  <%= form.hidden_field :user_id, value: current_user.id %>  
 <% end %>

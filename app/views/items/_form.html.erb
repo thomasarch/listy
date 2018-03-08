@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="add-box">
+  <div class="submit-box">
     <div class="field">
       <%= form.number_field :quantity, placeholder: 1, class: "qty-box" %>
     </div>
     
-    <div class="field">
-      <%= form.text_field :name, placeholder: "add item", class:"text-field" %>
+    <div class="field text-field">
+      <%= form.text_field :name, placeholder: "add item", class:"move-left" %>
     </div>
 
     <div class="actions">
-      <%= form.submit "+", class: "plus-button"%>
+      <%= form.submit "+" %>
     </div>
   </div>
 <%= form.hidden_field :list_id, value: @list.id %>  

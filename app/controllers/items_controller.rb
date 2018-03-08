@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @list = List.new
   end
 
   # GET /items/new
@@ -59,7 +60,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to list_path(id: @item.list_id) }
       format.json { head :no_content }
     end
   end
@@ -69,7 +70,6 @@ class ItemsController < ApplicationController
     def set_item
       @item = Item.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
       params.require(:item).permit(:name, :quantity, :list_id)

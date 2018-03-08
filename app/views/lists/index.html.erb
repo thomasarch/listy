@@ -1,15 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Lists</h1>
-
-<div class="list-box">
-  <ul>
-  <%= render @lists %>
-  </ul>
+<div class="header">
+	<div><h1>Lists</h1></div>
+	<div><%= render 'form', list: @list %></div>
 </div>
 
+<div id="lists" class="container">
+	<% if @lists.length == 0 %>
+		<i>There seems to be nothing here</i><br>
+	<% else %>
 
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th class="col-xs-11"></th>
+				<th class="col-xs-1"></th>
+			</tr>
+		</thead>
 
-<div>
-<%= render 'form', list: @list %>
+		<tbody>
+			<% @lists.each do |list| %>
+			<tr>
+				<td>
+					<%= link_to list_path(id: list.id) do %>
+					<div class="table-link">
+						<%= list.name %>
+					</div><% end %></td>
+				<td>
+					<%= link_to list, method: :delete do %>
+						<span class="glyphicon glyphicon-remove-circle x-button"></span>
+					<% end %>
+				</td>
+			</tr>
+			
+			<% end %>
+		</tbody>
+	</table>	
 </div>
+<% end %>
+<br>
