@@ -4,8 +4,10 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = List.where(user_id: current_user.id)
+    # @lists = List.all
+    @lists = List.where(user_id: current_user.id, is_recipe: nil)
     @list = List.new
+    @recipes = List.where(user_id: current_user.id, is_recipe: true)
   end
 
   # GET /lists/1
@@ -70,6 +72,6 @@ class ListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:name, :user_id)
+      params.require(:list).permit(:name, :user_id, :is_recipe)
     end
 end

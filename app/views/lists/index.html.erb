@@ -36,4 +36,15 @@
 	</table>	
 </div>
 <% end %>
+
+<%= render 'form', list: @list, is_recipe: true %>
+
+<% @recipes.each do |recipe| %>
+	<p>
+		<%= recipe.name %>
+	</p>
+<% end %>
+
+
+
 <br>

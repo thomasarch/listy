@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'lists#index'
-
+  get 'recipes' => 'lists#recipes'
   resources :items
   resources :lists
   devise_for :users

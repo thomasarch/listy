@@ -22,5 +22,11 @@
 
   </div>
 
-  <%= form.hidden_field :user_id, value: current_user.id %>  
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+<% if local_assigns[:is_recipe] %>
+  <%= form.hidden_field :is_recipe, value: true %>
+<% end %>
+
+
 <% end %>

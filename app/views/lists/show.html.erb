@@ -9,14 +9,22 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
-				<th class="col-xs-1">Quantity</td>
-				<th class="col-xs-10">Item</td>
+				<th class="col-xs-1"></th>
+				<th class="col-xs-1">Quantity</th>
+				<th class="col-xs-9">Item</th>
 				<th class="col-xs-1"></th>				
 			</tr>
 		</thead>
 		<tbody>
 			<% @list.items.each do |item| %>
 			<tr>
+				<td>
+					<span class="glyphicon glyphicon-unchecked"></span>
+					<span class="glyphicon glyphicon-check"></span>
+				</td>
+				
+
+
 				<td><%= item.quantity %></td>
 				<td><%= item.name %></td>
 				<td><%= link_to item, method: :delete do %>
