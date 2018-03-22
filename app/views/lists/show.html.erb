@@ -17,16 +17,21 @@
 		</thead>
 		<tbody>
 			<% @list.items.each do |item| %>
+
 			<tr>
 				<td>
-					<span class="glyphicon glyphicon-unchecked"></span>
-					<span class="glyphicon glyphicon-check"></span>
+						<%= link_to check(item) %>
+						<% if item.is_checked == false %>
+							<span class="glyphicon glyphicon-unchecked"></span>
+						<% else %>
+							<span class="glyphicon glyphicon-check"></span>
+						<% end %>
 				</td>
 				
 
 
 				<td><%= item.quantity %></td>
-				<td><%= item.name %></td>
+				<td><%= item.name %>&nbsp;<%= item.is_checked %></td>
 				<td><%= link_to item, method: :delete do %>
 					<span class="glyphicon glyphicon-remove-circle x-button"></span>
 					<% end %>
@@ -36,8 +41,6 @@
 		</tbody>
 	</table>	
 </div>
-
-
 
 <div id="items">
 	<%= render 'items/form', item: @item %>

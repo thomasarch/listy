@@ -52,6 +52,8 @@ class ItemsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
+      
+
     end
   end
 
@@ -72,6 +74,6 @@ class ItemsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :quantity, :list_id)
+      params.require(:item).permit(:name, :quantity, :list_id, :is_checked)
     end
 end

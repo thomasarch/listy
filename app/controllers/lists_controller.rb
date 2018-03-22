@@ -5,9 +5,9 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     # @lists = List.all
-    @lists = List.where(user_id: current_user.id, is_recipe: nil)
+    @lists = List.default
     @list = List.new
-    @recipes = List.where(user_id: current_user.id, is_recipe: true)
+    @recipes = List.recipes
   end
 
   # GET /lists/1
