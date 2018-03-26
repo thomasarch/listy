@@ -3,8 +3,6 @@
 </h1>
 <%= link_to 'edit name', edit_list_path(@list), class: 'edit-name' %>
 
-
-
 <div id="items" class="container">
 	<table class="table table-hover">
 		<thead>
@@ -19,20 +17,18 @@
 			<% @list.items.each do |item| %>
 
 			<tr>
-				<td>
-						<%= link_to check(item) %>
+				<td id="test">
+					<%= link_to check_path(id: item.id), remote: true, method: :put do %>
 						<% if item.is_checked == false %>
 							<span class="glyphicon glyphicon-unchecked"></span>
 						<% else %>
 							<span class="glyphicon glyphicon-check"></span>
 						<% end %>
+					<% end %>
 				</td>
-				
-
-
 				<td><%= item.quantity %></td>
-				<td><%= item.name %>&nbsp;<%= item.is_checked %></td>
-				<td><%= link_to item, method: :delete do %>
+				<td><%= item.name %></td>
+				<td><%= link_to item, remote: true, method: :delete do %>
 					<span class="glyphicon glyphicon-remove-circle x-button"></span>
 					<% end %>
 				</td>

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'lists#index'
   
-  get 'recipes' => 'lists#recipes'
-
+  put 'check' => 'lists#check'
+  
   resources :items
   resources :lists
   devise_for :users

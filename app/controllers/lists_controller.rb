@@ -12,6 +12,14 @@ class ListsController < ApplicationController
 
   # GET /lists/1
   # GET /lists/1.json
+  
+  def check
+    @item = Item.find(params[:id])
+    @item.toggle! :is_checked
+    redirect_to list_path(id: @item.list_id)
+  end
+
+
   def show
     @item = Item.new
   end
